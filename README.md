@@ -13,5 +13,9 @@ To have this script functioning you need to install some python modules.
 ```
 python3 -m pip install -r requirements.txt
 ```
+## using the tool
+To use this network scanning tool you need a working zeek environment. After this you should be able to just launch the script using the following command.  
 
-
+```
+sudo python3 zeek.py
+```
