@@ -1,30 +1,13 @@
 import nmap
 from datetime import datetime
-from fileinput import close
 import json
 import sys
 
 def main():
-    hashtagremoval()
     filtering_ip()
     privip_filtering()
     activeIpsList = Activity_filter()
     Scanning(activeIpsList)
-
-#removing hashtags from conn.log, because this caused problems with indexing in array
-def hashtagremoval():
-    filepath = "/opt/zeek/logs/2022-06-06/conn.log"
-    a_file = open(filepath, "r")
-    lines = a_file.readlines()
-    a_file.close()
-
-    for x in range(0, 8):
-        del lines[0]
-
-    new_file = open(filepath, "w+")
-    for line in lines:
-        new_file.write(line)
-        new_file.close()
 
 #filtering/selecting all ip addresses from log file.
 def filtering_ip():
